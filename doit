@@ -1,13 +1,17 @@
 #!/bin/bash
 echo "[DOIT] Welcome to the quicker docker builder for "sample react website on localhost!""
-read -p "Press b to build, r to run or n/q to quit, and hit enter: " rc
+echo "   b to build the docker image, or"
+echo "   r to run a docker container, or"
+echo "   m to run and also map the container's /mnt folder to host's $PWD for dev purposes, or"
+echo "   q to quit, "
+read -p " and hit enter: " rc
 case "$rc" in
-	b)  docker build -t docker-react-website-starter .;;
-	r)  echo "Did you remember to stop the previously running job?"
-		docker run -td -p 80:3000 docker-react-website-starter ;;
-	n) exit;;
-	q) exit;;
+        b)  docker build -t docker-react-website-starter .;;
+        r)  echo "Running a docker container (no /mnt)"
+                docker run -td -p 80:3000 docker-react-website-starter ;;
+        m)  echo "Running the docker container (with /mnt for dev)"
+                docker run -td -p 80:3000 -v $PWD:/mnt docker-react-website-starter ;;
+        q) exit;;
 esac
 ./doit
-
 
