@@ -2,9 +2,13 @@
 * C1.js -- Services
 * *****************************************/
 import React from "react";
+import "../css/site.css";
 
 import TCText from "../components/TCText";
 import image3 from "../images/image3.jpg";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 
 class C1 extends React.Component {
@@ -15,7 +19,7 @@ class C1 extends React.Component {
 
   render() {
       return (
-          <div style={{margin:"20px"}}>
+	      <Container>
 		<h2 style={{textAlign:"left"}}>
 			<TCText
 				englishtext={"Services"} 
@@ -23,14 +27,18 @@ class C1 extends React.Component {
 				langprefs={this.props.langprefs} >
 			</TCText>
 		</h2>
-		<img src={image3} style={{float:"right", borderRadius:"15px" }} alt="oops"/>
-	      <div style={{margin:"40px", backgroundColor:"#ffeed2", width:"40%", padding:"10px", borderRadius:"20px"}}>
+	      <Row>
+		<Col xs="12" md="8">
+			<img src={image3}  alt="oops" className="image-styling" />
+		</Col>
+	      <Col className="text-styling" style={{background:"rgba(240,240,215,1)"}}>
 	      <h5>
 		<TCText
 			englishtext={"The Services are listed here"} 
 			spanishtext={"Los servicios se enumeran aquí"}
 			langprefs={this.props.langprefs} >
 		</TCText>
+	      </h5>
 		<TCText
 			englishtext={"Services #1"} 
 			spanishtext={"Servicios n. ° 1"}
@@ -67,10 +75,10 @@ class C1 extends React.Component {
 					langprefs={this.props.langprefs} >
 				</TCText>
 	      		</h5>
-	      </h5>
-	      </div>
+	      </Col>
+	      </Row>
 
-          </div>
+	      </Container>
       );
   }
 }

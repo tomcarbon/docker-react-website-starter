@@ -3,8 +3,12 @@
 * *****************************************/
 import React from "react";
 
+import "../css/site.css";
 import TCText from "../components/TCText";
 import image4 from "../images/image4.jpg";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 
 class H1 extends React.Component {
@@ -15,7 +19,7 @@ class H1 extends React.Component {
 
   render() {
       return (
-	      <div style={{margin:"20px"}}>
+	      <Container>
 		<h2 style={{textAlign:"left"}}>
 			<TCText
 				englishtext={"Employment"} 
@@ -23,13 +27,19 @@ class H1 extends React.Component {
 				langprefs={this.props.langprefs} >
 			</TCText>
 	      	</h2>
+	      <Row>
+	      <Col className="text-styling" xs="12" md="6">
 		<TCText
 			englishtext={"We are looking for a talented and resourceful person to join our team!"} 
 			spanishtext={"¡Estamos buscando un mecánico talentoso e ingenioso para unirse a nuestro equipo!"} 
 			langprefs={this.props.langprefs} >
 		</TCText>
-		<img src={image4} alt="oops" style={{borderRadius:"20px"}}/>
-	      </div>
+	      </Col>
+	      <Col>
+		<img src={image4} alt="oops" className="image-styling"/>
+	      </Col>
+	      </Row>
+	      </Container>
       );
   }
 }

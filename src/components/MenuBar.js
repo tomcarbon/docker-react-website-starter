@@ -2,6 +2,12 @@
  * MenuBar.js
  * ****************************************/
 import React from 'react';
+
+import "../css/site.css";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+
 import TCText from './TCText';
 
 class MenuBar extends React.Component {
@@ -9,8 +15,9 @@ class MenuBar extends React.Component {
 	render() {
 		var handleToUpdate = this.props.handleToUpdate;
 		return (
-			<div style={{height:"auto", backgroundColor:"#f0f8ff" }} >
-				<span>
+			<div style={{background:"rgba(215,240,255,1)"}}>
+			<Row>
+			<Col xs="12" >
 				<button 
 					style={menubuttonstyle}
 					onClick={() => handleToUpdate('A1')}>
@@ -90,15 +97,13 @@ class MenuBar extends React.Component {
 						langprefs={this.props.langprefs} >
 					</TCText>
 				</button>
-				</span>
+			</Col>
+			</Row>
 			</div>
 		);
 	}
 }
 const menubuttonstyle = {
-	/*
-	float:"left", 
-	*/
 	height:"30px", 
 	backgroundColor:"#e1c699", 
 	marginLeft:"10px",

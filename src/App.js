@@ -7,6 +7,7 @@ import MyTrailer from "./components/MyTrailer";
 import MenuBar from "./components/MenuBar";
 import Nav from "./components/Nav";
 
+
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);

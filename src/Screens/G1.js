@@ -3,8 +3,12 @@
 * *****************************************/
 import React from "react";
 
+import "../css/site.css";
 import TCText from "../components/TCText";
 import map1 from "../images/map1.jpg";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 
 class G1 extends React.Component {
@@ -15,7 +19,7 @@ class G1 extends React.Component {
 
   render() {
       return (
-	      <div style={{margin:"20px"}}>
+	      <Container>
 		<h2 style={{textAlign:"left"}}>
 			<TCText
 				englishtext={"Directions"} 
@@ -23,13 +27,19 @@ class G1 extends React.Component {
 				langprefs={this.props.langprefs} >
 			</TCText>
 	      	</h2>
+	      <Row>
+	      <Col className="text-styling" xs="12">
 		<TCText
 			englishtext={"We are located at: 1234 S Ficticious Ave Redondo Beach, CA 90278"} 
 			spanishtext={"Estamos ubicados en: 1234 S Ficticious Ave Redondo Beach, CA 90278"} 
 			langprefs={this.props.langprefs} >
 		</TCText>
-		<img src={map1} style={{borderRadius:"20px", marginLeft:"15%", width: "70%"}} alt="oops" />
-	      </div>
+	      </Col>
+	      <Col>
+		<img src={map1} className="image-styling" alt="oops" />
+	      </Col>
+	      </Row>
+	      </Container>
       );
   }
 }

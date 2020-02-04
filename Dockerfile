@@ -16,9 +16,12 @@ WORKDIR /app
 RUN npm install yarn -g
 RUN yarn create react-app docker-react-website-starter
 
-#copy the quick starter project to replace the generic react-app project
+#copy the quick starter project to replace the generic react-app project and run yarn install
 COPY src/ /app/docker-react-website-starter/src/
 COPY public/ /app/docker-react-website-starter/public/
+COPY package.json /app/docker-react-website-starter/
+RUN yarn add react-bootstrap
+RUN yarn install
 
 #run the server
 EXPOSE 80

@@ -1,8 +1,12 @@
 #!/bin/bash
-echo "[DOIT] Welcome to the quicker docker builder for "sample react website on localhost!""
+echo "***************************************************************************************"
+echo "* [DOIT] Welcome to the quicker docker builder for 'sample react website deluxe on localhost!'"
+echo "***************************************************************************************"
 echo "   b to build the docker image, or"
 echo "   r to run a docker container, or"
-echo "   m to run and also map the container's /mnt folder to host's $PWD for dev purposes, or"
+echo "   m to run and also map the container's /mnt folder to host's"
+echo "     $PWD "
+echo "     folder for dev purposes, or"
 echo "   q to quit, "
 read -p " and hit enter: " rc
 case "$rc" in

@@ -9,7 +9,7 @@ TLDR: This is intended to be a quick starter for getting a node/react website (t
 
 ******************************************************************************
 
-Here is a website that runs from a docker container on localhost port 80, utilizing yarn, node, and react. 
+Here is a website that runs from a docker container on localhost port 80, utilizing yarn, node, React, React-Bootstrap.
 
 The docker container uses a robust installation of Ubuntu 18.04 with several common tools (such as htop and vim) installed. The node/React website itself is of low-medium complexity, built for a ficticious business, featuring a home page with several menu items and navigation, some images, and a method for supporting multiple languages (configured for English/Spanish in this example).
 
@@ -25,16 +25,12 @@ The docker container uses a robust installation of Ubuntu 18.04 with several com
 Run the script "doit" (options b, then r) to build and then run this website. Shortly after the container has started running, the website should be accessible via the browser at 'localhost'.
  
 **Notes**
-1) The first time is probably going to take several minutes, and the install may even appear to hang after the "Happy hacking! Done in xx.xxs." messages. Hang in there. After the first time things should go much quicker. Also, the first time, if you get a timeout error (esp. with yarn install), run option 'b' again and that should resolve the issue.
-2) After running the container, make sure to give yarn a few seconds to start up the server, before checking the output on your browser at localhost.
-3) The footer in the Services and Testimonials screens drops into the right place after content is added.
-4) To use your own project (which was created by create react-app or create-react-app), replace the src and public folders with your own. Depending on the complexity of your site, you may need to add additional steps to the Dockerfile (e.g.: copy package.json file, RUN yarn install).
-5) This also runs on the Raspberry Pi3 (Raspbian).
-
-**Known Issues**
-1) On the docker image build there are some warnings on the yarn calls, related to typescript/react-scripts. Installing the latest version of typescript in the Dockerfile before the call to "yarn create react-app" does not alleviate the issue. There is also a warning related to sha.js. If anyone can help make these go away, please advise.
+1) The first time is probably going to take several minutes, some warnings, and the install may even appear to hang after the "Happy hacking! Done in xx.xxs." messages. Hang in there. After the first time things should go much quicker. Also, the first time, if you get a timeout error (might happen with yarn install on a pi3), run option 'b' again and that should resolve the issue.
+2) After running the container, make sure to give yarn about a minute to start up the server, before checking the output on your browser at localhost.
+3) To use your own project (which was created with create react-app or create-react-app), replace the src and public folders and package.json with your own. 
+4) react-scripts 3.2.0 (instead of 3.3.0) is being used in the package.json file, due to incompatibility issue between 3.3.0 and React-Bootstrap.
 
 ************************************************
 
 
-*(this page last updated: 20200120)*
+*(this page last updated: 20200203)*

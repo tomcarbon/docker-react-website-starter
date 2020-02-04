@@ -3,8 +3,12 @@
 * *****************************************/
 import React from "react";
 
+import "../css/site.css";
 import TCText from "../components/TCText";
 import image1 from "../images/image1.jpg";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 
 class D1 extends React.Component {
@@ -15,7 +19,7 @@ class D1 extends React.Component {
 
   render() {
       return (
-	<div style={{margin:"20px"}}>
+	      <Container>
 		<h2 style={{textAlign:"left"}}>
 			<TCText
 				englishtext={"Testimonials"} 
@@ -23,9 +27,11 @@ class D1 extends React.Component {
 				langprefs={this.props.langprefs} >
 			</TCText>
 		</h2>
-		<img src={image1} style={{width: "40%", float:"right", borderRadius:"10px"}} alt="oops"/>
-	      <div style={{width:"50%", marginLeft:"40px", marginTop:"10px", backgroundColor:"#e8e8ff", borderRadius:"20px", padding:"20px"}}>
-
+	      <Row>
+	      <Col xs="12" md="6">
+		<img src={image1} className="image-styling" alt="oops"/>
+	      </Col>
+	      <Col className="text-styling" style={{background:"rgba(215,240,240,1)"}}>
 			<TCText
 				englishtext={"This site is exactly as I expected."}
 				spanishtext={"Este sitio es exactamente como lo esperaba."} 
@@ -36,8 +42,9 @@ class D1 extends React.Component {
 				spanishtext={"Tom C.- Los Angeles, CA"}
 				langprefs={this.props.langprefs} >
 			</TCText></h5>
-		</div>
-      </div>
+	      </Col>
+	      </Row>
+	      </Container>
       );
   }
 }

@@ -3,7 +3,11 @@
 * *****************************************/
 import React from "react";
 
+import "../css/site.css";
 import TCText from "../components/TCText";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 
 class E1 extends React.Component {
@@ -14,7 +18,7 @@ class E1 extends React.Component {
 
   render() {
       return (
-	      <div style={{margin:"20px"}}>
+	      <Container>
 		<h2 style={{textAlign:"left"}}>
 			<TCText
 				englishtext={"Specials"} 
@@ -22,8 +26,12 @@ class E1 extends React.Component {
 				langprefs={this.props.langprefs} >
 			</TCText>
 	      	</h2>
-		  <img style={{width:"400px", margin:"25px", borderRadius:"5px"}} src={ require('../images/coupon001.png') } alt="whoooooops." />
-	      </div>
+	      		<Row>
+			<Col xs="12">
+				<img className="image-styling" src={ require('../images/coupon001.png') } alt="whoooooops." />
+			</Col>
+		      </Row>
+	      </Container>
       );
   }
 }
