@@ -14,10 +14,6 @@ import H1 from "../Screens/H1"
 
 class Nav extends React.Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	render () {
 		if (this.props.dest === 'A1') {
 			return (
